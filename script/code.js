@@ -118,3 +118,35 @@ const series = document.querySelectorAll('.series');
 mss.onclick = function(){
     series.scrollIntoView()
 }
+const ramadan25 = document.getElementById('ramadan25');
+ramadan25.onclick = function(){
+    window.location.href = 'log/sD%5E&%5E977%23+efeVgjOU=+!ds2@dsdVDDFTV/series.html'
+}
+
+
+// تحديد العناصر التي نريد إضافة الانيميشن لها
+const scrollElements = document.querySelectorAll(".scroll-animation");
+
+// وظيفة للتحقق من ظهور العنصر في منطقة العرض
+
+
+// وظيفة لإضافة class "active" عند ظهور العنصر
+const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+        if (elementInView(el)) {
+            el.classList.add("active");
+        }
+    });
+};
+
+// تشغيل الوظيفة عند التمرير
+window.addEventListener("scroll", handleScrollAnimation);
+
+// تشغيل الوظيفة عند تحميل الصفحة لضمان ظهور العناصر المرئية
+window.addEventListener("load", handleScrollAnimation);
+
+// وظيفة لإظهار/إخفاء قائمة البرجر
+function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("active");
+}

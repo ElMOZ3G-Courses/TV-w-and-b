@@ -73,41 +73,7 @@ body {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* أنماط للشاشات الصغيرة */
-@media (max-width: 800px) {
-    .nav-links {
-        position: absolute;
-        top: 110px;
-        right: 0;
-        background-color: #000000;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        display: none;
-    }
 
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .hamburger {
-        display: flex;
-        margin-top: 0;
-    }
-    .name-top{
-        margin-bottom: 15px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .nav-links{
-        margin-top: 45px;
-        border-radius: 0px 0px 10px 10px;
-    }
-}
 
 /* أنماط القسم الرئيسي */
 .hero {
@@ -115,6 +81,7 @@ body {
     padding: 100px 0;
     text-align: center;
     margin-top: 120px;
+
 }
 
 .hero h2 {
@@ -309,7 +276,11 @@ li{
     z-index: 1000;
 }
 
-
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
 .social-share a {
     text-decoration: none;
@@ -377,6 +348,84 @@ li{
 }
 
 
+
+/* أنماط للشاشات الصغيرة */
+@media (max-width: 800px) {
+    .hamburger {
+        display: flex;
+        margin-top: 0;
+    }
+    .nav-links {
+        position: absolute;
+        top: 110px;
+        right: 0;
+        background-color: #000000;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .name-top{
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .nav-links{
+        margin-top: 45px;
+        border-radius: 0px 0px 10px 10px;
+    }
+}
+
+
+
+@media (max-width: 800px) {
+    .container {
+        flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد */
+    }
+
+    .search-bar {
+        display: none; /* إخفاء شريط البحث على الشاشات الصغيرة */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px; /* تحت الهيدر */
+        right: 0;
+        background-color: #000000;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 10px 0;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; /* إظهار زر البرجر على الشاشات الصغيرة */
+    }
+
+    .logo h1 {
+        font-size: 20px; /* تصغير حجم الشعار على الشاشات الصغيرة */
+    }
+}
 
 
 
@@ -593,4 +642,174 @@ button {
 .container1 p{
     margin-bottom: 30px;
     font-size: 22px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* إعادة تعيين الأنماط الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    direction: rtl; /* النص من اليمين لليسار */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* لجعل العناصر داخل الهيدر متساوية في الارتفاع */
+}
+
+/* أنماط الهيدر */
+.header {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 80px; /* ارتفاع ثابت للهيدر */
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0; /* إزالة الهوامش الافتراضية */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* تباعد بين حقل البحث والزر */
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #333;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0; /* إزالة الهوامش الافتراضية */
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #cccccc;
+}
+
+.hamburger {
+    display: none; /* مخفي على الشاشات الكبيرة */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+
+@media (max-width: 800px) {
+    .nav-links {
+        position: absolute;
+        top: 80px; /* تحت الهيدر */
+        right: 0;
+        background-color: #000000;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none; /* مخفي بشكل افتراضي */
+        padding: 10px 0;
+        border-radius: 0px 0px 10px 10px;
+        margin-top: 110px;
+    }
+
+    .nav-links.active {
+        display: flex; /* إظهار القائمة عند النقر */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; /* إظهار زر Hamburger على الشاشات الصغيرة */
+    }
+    *{
+        font-size: 10px;
+    }
+    .header {
+        height: 200px;
+        font-size: 10px;
+    }
+    
+}
+
+/* أنميشن الظهور عند التمرير */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animation.active {
+    opacity: 1;
+    transform: translateY(0);
 }
