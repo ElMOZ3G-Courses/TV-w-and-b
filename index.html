@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع الأفلام والمسلسلات</title>
+    <link rel="stylesheet" href="script/style.css">
+    <link rel="icon" href="png/icon.jpg">
+</head>
+<body>
+    <header class="header">
+
+        
+        
+        <div class="container">
+            <div class="logo">
+                <h1 class="name-top">سيما ابيض و اسود</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="ابحث عن فيلم أو مسلسل...">
+                <button onclick="search()">بحث</button>
+            </div>
+            <nav class="navbar">
+
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#" id="afla">الأفلام</a></li>
+                    <li><a href="#">المسلسلات</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero">
+            <div class="container">
+                <h2>مرحبا بك في موقع سيما ابيض و اسود لي مشاهدة احدث الافلام و المسلسلات!</h2>
+                <p>استمتع بأفضل الافلام و مسلسلات رمضان</p>
+            </div>
+
+            <div class="categories">
+                <h2>التصنيفات</h2>
+                <ul class="ul-t">
+                    <li><a href="#">أكشن</a></li>
+                    <li><a href="#">كوميدي</a></li>
+                    <li><a href="#">دراما</a></li>
+                    <li><a href="#">رعب</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="movies">
+            <div class="container">
+                <h2 id="a1">أحدث الأفلام</h2>
+                <h2 style="display: none;" id="a1">لا يوجد نتائج</h2>
+                <div class="movie-grid">
+                    <div class="movie-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/5/5c/Welad_Rizk_3%2C_El_Qadia.jpeg/260px-Welad_Rizk_3%2C_El_Qadia.jpeg" alt="فيلم 1">
+                        <h3>ولاد رزق3</h3>
+                        <p>في هذا الجزء، وبعد مرور سنوات وانفصال الأخوة في طرقهم الحياتية المختلفة. لكن في يوم من الأيام، يعود شبح من الماضي ليلقي بظلاله على ولاد رزق، مما يجبرهم على العودة إلى حياة الجريمة والسرقة مرة أخرى حتى ينجوا بأنفسهم، في عملية مصيرية هي الأكبر والأخطر والأهم في تاريخ ولاد رزق. ﺇﺧﺮاﺝ: طارق العريان (مخرج)
+                            ﺗﺄﻟﻴﻒ: صلاح الجهيني (مؤلف)
+                            طاقم العمل: أحمد عز  عمرو يوسف  آسر ياسين  كريم قاسم  علي صبحي  محمد ممدوح  (المزيد)
+                            أجزاء أخرى: ولاد رزق  ولاد رزق 2: عودة أسود الأرض</p>
+                            <div class="rating">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+
+                            <div class="comments">
+                                <h3>التعليقات</h3>
+                                <div id="comment-list"></div>
+                                <textarea id="comment-input" placeholder="أضف تعليقًا..."></textarea>
+                                <button onclick="addComment()">إرسال</button>
+                            </div>
+                        </div>
+                    <div class="movie-card" id="movie">
+                        <img src="https://misrconnect.com/storage/news-posts/December2024/lvpJWHVPLMalU4Qv3YxB.png" alt="فيلم 2">
+                        <h3>الحريفة2</h3>
+                        <p>يواصل (ماجد) مع أصدقائه وزملائه خوض المزيد من التحديات والمغامرات المثيرة من خلال ممارسة لعبة كرة القدم، كما تشهد حياتهم الشخصية المزيد من التطورات والتغيرات المختلفة. ﺧﺮاﺝ: كريم سعد (مخرج)
+                            ﺗﺄﻟﻴﻒ: إياد صالح (مؤلف)
+                            طاقم العمل: نور النبوي  أحمد غزي  نور إيهاب  خالد الذهبي  أحمد بحر / كزبرة  عبدالرحمن محمد  (المزيد)</p>
+                            <div class="rating">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+
+                            <div class="comments">
+                                <h3>التعليقات</h3>
+                                <div id="comment-list"></div>
+                                <textarea id="comment-input" placeholder="أضف تعليقًا..."></textarea>
+                                <button onclick="addComment()">إرسال</button>
+                            </div>
+                        </div>
+                    <div class="movie-card">
+                        <img src="https://media0070.elcinema.com/uploads/_315x420_a8ca5af73265fe2ca6acbccbc733cbbadd9538525587bdb27bfd7ad3ddb5d0aa.jpg" alt="فيلم 3">
+                        <h3>السنيور</h3>
+                        <p>يشارك في بطولة الفيلم بيومي فؤاد وياسر السقاف، وهو من إنتاج إيفان خضير وإخراج أيمن خوجه الحاصل عدة جوائز، ويُعتبر “السنيور” أول فيلم يصدر من باكورة التعاون والإنتاج المشترك بين شركة أيمن خوجه بيكتشرز وموفي ستوديوز والبساط البنفسجي للإنتاج، وأول فيلم سعودي يضم نجم مصري في طاقم ممثليه، وتم تصويره في 18 يوماً في أكثر من 35 موقع في مدينة جدة.
+                            وأعرب أيمن خوجه عن سعادته بعرض الفيلم جماهيرياً في صالات السينما بعد رحلة استمرت سنتين من العمل الجاد، منطلقاً من ظاهرة أن بـعض الشـركـات تـفضل الـعنصر الأجـنبي عـلى الـكفاءة المحـلية خـصوصـا في المناصب الكبيرة، حيث بدأ خوجه العمل على السيناريو في سبتمبر 2022.</p>
+                            <div class="rating">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+
+                            <div class="comments">
+                                <h3>التعليقات</h3>
+                                <div id="comment-list"></div>
+                                <textarea id="comment-input" placeholder="أضف تعليقًا..."></textarea>
+                                <button onclick="addComment()">إرسال</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="but">
+            <button class="mz" onclick="showMore()" id="mz">عرض المزيد</button>
+        </div>
+
+        <section class="series">
+            <div class="container">
+                <div class="series-grid">
+                    <div class="series-card">
+                        <img src="https://i.ytimg.com/vi/dT9wjeaQXIo/maxresdefault.jpg" alt="مسلسل 1">
+                        <h3>مسلسلات رمضان 2025</h3>
+                        <p>جميع المسلسلات التي تم بثها في رمضان 2025.</p>
+                    </div>
+                    <div class="series-card">
+                        <img src="https://via.placeholder.com/300x400" alt="مسلسل 2">
+                        <h3>اسم المسلسل 2</h3>
+                        <p>وصف قصير للمسلسل.</p>
+                    </div>
+                    <div class="series-card">
+                        <img src="https://via.placeholder.com/300x400" alt="مسلسل 3">
+                        <h3>اسم المسلسل 3</h3>
+                        <p>وصف قصير للمسلسل.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© سيما ابيض و اسود 2025</p>
+        </div>
+    </footer>
+
+    <script src="script/code.js"></script>
+</body>
+</html>

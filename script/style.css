@@ -1,0 +1,299 @@
+/* إعادة تعيين الأنماط الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    direction: rtl; /* النص من اليمين لليسار */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* أنماط الهيدر */
+.header {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0px 0px 10px 10px;
+    justify-content: space-around;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #cccccc;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* أنماط للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 140px;
+        right: 0;
+        background-color: #000000;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+    .name-top{
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .nav-links{
+        margin-top: 45px;
+        border-radius: 0px 0px 10px 10px;
+    }
+}
+
+/* أنماط القسم الرئيسي */
+.hero {
+    background-color: #f1f1f1;
+    padding: 100px 0;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555555;
+}
+
+/* أنماط الأفلام والمسلسلات */
+.movies, .series {
+    padding: 50px 0;
+}
+
+.movies h2, .series h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.movie-grid, .series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.movie-card, .series-card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    
+}
+.series-card:hover{
+    transform: translate3d(0,-5px,.08px);
+    cursor: pointer;
+}
+
+.movie-card img, .series-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.movie-card:hover{
+    transform: translate3d(0,-5px,.08px);
+    cursor: pointer;
+}
+
+.movie-card h3, .series-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.movie-card p, .series-card p {
+    font-size: 16px;
+    color: #555555;
+}
+
+/* أنماط الفوتر */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    height: 120px;
+}
+
+.footer p {
+    font-size: 16px;
+}
+.name-top{
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #333;
+}
+
+
+.rating {
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star.active {
+    color: #ffcc00;
+}
+
+
+.comments {
+    margin-top: 30px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+.categories{
+    margin-top: 40px;
+}
+.categories ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.categories a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.ul-t{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    transform: scale(0.97);
+}
+.mz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.but{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
