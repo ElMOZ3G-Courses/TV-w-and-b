@@ -31,6 +31,90 @@ function addComment() {
 }
 const afla = document.getElementById('afla')
 const sec = document.getElementById('movie')
-afla.onclick = function(){
-    sec.scrollIntoView()
+setTimeout(()=>{
+    afla.onclick = function() {
+        const scrollElements = document.querySelectorAll(".scroll-animation");
+        const elementInView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        };
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el)) {
+                    el.classList.add("active");
+                }
+            });
+        };
+        window.addEventListener("scroll", handleScrollAnimation);
+        window.addEventListener("load", handleScrollAnimation);
+
+        sec.scrollIntoView()
+    }
+},2000)
+
+function showNotification(message) {
+    const notification = document.createElement("div");
+    notification.className = "notification";
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+showNotification("تمت إضافة فيلم جديد!");
+const backToTopButton = document.getElementById("back-to-top");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+        backToTopButton.classList.add("show"); 
+    } else {
+        backToTopButton.classList.remove("show"); 
+        setTimeout(() => {
+            backToTopButton.style.display = "none"; 
+        }, 500);
+    }
+};
+backToTopButton.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+const categories = document.querySelectorAll(".categories ul li");
+categories.forEach((item, index) => {
+    item.style.setProperty("--i", index);
+});
+
+function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("active");
+}
+const scrollUpElements = document.querySelectorAll(".scroll-up-animation, .scroll-up-animation-scale");
+const elementInView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+        elementTop <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+};
+const handleScrollUpAnimation = () => {
+    scrollUpElements.forEach((el) => {
+        if (elementInView(el)) {
+            el.classList.add("active");
+        } else {
+            el.classList.remove("active");
+        }
+    });
+};
+window.addEventListener("scroll", handleScrollUpAnimation);
+window.addEventListener("load", handleScrollUpAnimation);
+const re = document.getElementById('re')
+const mss = document.getElementById('mss')
+re.onclick = function(){
+    window.location.reload()
+}
+const series = document.querySelectorAll('.series');
+mss.onclick = function(){
+    series.scrollIntoView()
 }

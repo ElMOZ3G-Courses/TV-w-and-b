@@ -21,7 +21,7 @@ body {
 /* أنماط الهيدر */
 .header {
     width: 100%;
-    background-color: #000000;
+    background-color: #000000b6;
     color: #ffffff;
     padding: 20px 0;
     position: fixed;
@@ -29,6 +29,7 @@ body {
     z-index: 1000;
     border-radius: 0px 0px 10px 10px;
     justify-content: space-around;
+    height: 170px;
 }
 
 .logo h1 {
@@ -73,10 +74,10 @@ body {
 }
 
 /* أنماط للشاشات الصغيرة */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .nav-links {
         position: absolute;
-        top: 140px;
+        top: 110px;
         right: 0;
         background-color: #000000;
         flex-direction: column;
@@ -95,6 +96,7 @@ body {
 
     .hamburger {
         display: flex;
+        margin-top: 0;
     }
     .name-top{
         margin-bottom: 15px;
@@ -180,7 +182,7 @@ body {
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    height: 120px;
+    height: 180px;
 }
 
 .footer p {
@@ -231,9 +233,6 @@ body {
 }
 
 
-.comments {
-    margin-top: 30px;
-}
 
 textarea {
     width: 100%;
@@ -296,4 +295,302 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+
+
+.social-share a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 30px;
+}
+
+.facebook {
+    background-color: #1877f2;
+    color: #fff;
+}
+
+.twitter {
+    background-color: #1da1f2;
+    color: #fff;
+}
+
+.whatsapp {
+    background-color: #25d366;
+    color: #fff;
+}
+
+#back-to-top {
+    display: none; /* مخفي بشكل افتراضي */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0; /* مخفي في البداية */
+    transform: translateY(100px); /* يبدأ من أسفل */
+}
+
+#back-to-top.show {
+    opacity: 1; /* يظهر */
+    transform: translateY(0); /* يعود إلى مكانه */
+}
+
+#back-to-top:hover {
+    background-color: #333;
+    animation: bounce 0.5s ease; /* اهتزاز عند التمرير فوقه */
+}
+
+/* انيميشن الاهتزاز */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.aff:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* انيميشن الظهور التدريجي */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* انيميشن الاهتزاز */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* انيميشن النبض */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* انيميشن الانزلاق */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* تطبيق الانيميشن على العناصر */
+.header {
+    animation: fadeIn 1s ease-out;
+}
+
+.hero {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.movies {
+    animation: fadeIn 2s ease-out;
+}
+
+.series {
+    animation: fadeIn 2.5s ease-out;
+}
+
+.footer {
+    animation: fadeIn 3s ease-out;
+}
+
+#back-to-top {
+    animation: bounce 2s infinite;
+}
+
+button {
+    animation: pulse 1.5s infinite;
+}
+
+.movie-card, .series-card {
+    animation: slideIn 1s ease-out;
+}
+
+.categories ul li {
+    animation: fadeIn 1s ease-out;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+
+
+
+
+/* انيميشن الظهور التدريجي */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* إخفاء العناصر بشكل افتراضي */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* إظهار العناصر عند التمرير */
+.scroll-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scroll-animation-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animation-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.nav-links {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+/* انيميشن الظهور التدريجي من الأسفل */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* إخفاء العناصر بشكل افتراضي */
+.scroll-up-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* إظهار العناصر عند التمرير لأعلى */
+.scroll-up-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* انيميشن التكبير */
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scroll-up-animation-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-up-animation-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+.mss{
+    cursor: pointer;
+}
+.re{
+    cursor: pointer;
+}
+.container1 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.container1 p{
+    margin-bottom: 30px;
+    font-size: 22px;
 }

@@ -8,34 +8,32 @@
     <link rel="icon" href="png/icon.jpg">
 </head>
 <body>
+    
     <header class="header">
-
-        
-        
         <div class="container">
             <div class="logo">
-                <h1 class="name-top">سيما ابيض و اسود</h1>
+                <h1>سيما أبيض وأسود</h1>
             </div>
             <div class="search-bar">
                 <input type="text" id="search-input" placeholder="ابحث عن فيلم أو مسلسل...">
                 <button onclick="search()">بحث</button>
             </div>
             <nav class="navbar">
-
                 <div class="hamburger" onclick="toggleMenu()">
                     <div class="line"></div>
                     <div class="line"></div>
                     <div class="line"></div>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#">الرئيسية</a></li>
-                    <li><a href="#" id="afla">الأفلام</a></li>
-                    <li><a href="#">المسلسلات</a></li>
-                    <li><a href="#"></a></li>
+                    <li><a class="re" id="re">الرئيسية</a></li>
+                    <li><a class="aff" id="afla">الأفلام</a></li>
+                    <li><a class="mss" id="mss">المسلسلات</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <button id="back-to-top" title="ارجع إلى الأعلى">↑</button>
 
     <main>
         
@@ -76,12 +74,7 @@
                                 <span class="star" data-value="5">★</span>
                             </div>
 
-                            <div class="comments">
-                                <h3>التعليقات</h3>
-                                <div id="comment-list"></div>
-                                <textarea id="comment-input" placeholder="أضف تعليقًا..."></textarea>
-                                <button onclick="addComment()">إرسال</button>
-                            </div>
+
                         </div>
                     <div class="movie-card" id="movie">
                         <img src="https://misrconnect.com/storage/news-posts/December2024/lvpJWHVPLMalU4Qv3YxB.png" alt="فيلم 2">
@@ -97,12 +90,6 @@
                                 <span class="star" data-value="5">★</span>
                             </div>
 
-                            <div class="comments">
-                                <h3>التعليقات</h3>
-                                <div id="comment-list"></div>
-                                <textarea id="comment-input" placeholder="أضف تعليقًا..."></textarea>
-                                <button onclick="addComment()">إرسال</button>
-                            </div>
                         </div>
                     <div class="movie-card">
                         <img src="https://media0070.elcinema.com/uploads/_315x420_a8ca5af73265fe2ca6acbccbc733cbbadd9538525587bdb27bfd7ad3ddb5d0aa.jpg" alt="فيلم 3">
@@ -117,12 +104,7 @@
                                 <span class="star" data-value="5">★</span>
                             </div>
 
-                            <div class="comments">
-                                <h3>التعليقات</h3>
-                                <div id="comment-list"></div>
-                                <textarea id="comment-input" placeholder="أضف تعليقًا..."></textarea>
-                                <button onclick="addComment()">إرسال</button>
-                            </div>
+
                         </div>
                 </div>
             </div>
@@ -132,7 +114,7 @@
             <button class="mz" onclick="showMore()" id="mz">عرض المزيد</button>
         </div>
 
-        <section class="series">
+        <section class="series" id="series">
             <div class="container">
                 <div class="series-grid">
                     <div class="series-card">
@@ -140,24 +122,19 @@
                         <h3>مسلسلات رمضان 2025</h3>
                         <p>جميع المسلسلات التي تم بثها في رمضان 2025.</p>
                     </div>
-                    <div class="series-card">
-                        <img src="https://via.placeholder.com/300x400" alt="مسلسل 2">
-                        <h3>اسم المسلسل 2</h3>
-                        <p>وصف قصير للمسلسل.</p>
-                    </div>
-                    <div class="series-card">
-                        <img src="https://via.placeholder.com/300x400" alt="مسلسل 3">
-                        <h3>اسم المسلسل 3</h3>
-                        <p>وصف قصير للمسلسل.</p>
-                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
+        <div class="container1">
             <p>© سيما ابيض و اسود 2025</p>
+        </div>
+        <div class="social-share">
+            <a href="#" class="facebook">Facebook</a>
+            <a href="#" class="twitter">Twitter</a>
+            <a href="#" class="whatsapp">WhatsApp</a>
         </div>
     </footer>
 
