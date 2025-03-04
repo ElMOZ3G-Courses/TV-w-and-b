@@ -1,16 +1,226 @@
-/* إعادة تعيين الأنماط الافتراضية */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* تنسيقات عامة */
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    direction: rtl; /* النص من اليمين لليسار */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* تنسيقات الهيدر */
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* تنسيقات القسم الرئيسي */
+.main {
+    display: flex;
+    flex-direction: column; /* تغيير الاتجاه إلى عمودي على الشاشات الصغيرة */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.video-section {
+    flex: 3;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* نسبة 16:9 للفيديو */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 5vh;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-details {
+    margin-top: 20px;
+}
+
+.video-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.video-details p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* تنسيقات قائمة الفيديوهات */
+.video-list {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-list h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.video-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.video-item:hover {
+    background-color: #f1f1f1;
+}
+
+.video-item img {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.video-info h4 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.video-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0 0;
+}
+video{
+    width: 100%;
+}
+
+/* تنسيقات الفوتر */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Media Queries للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column; /* تغيير الاتجاه إلى عمودي */
+    }
+
+    .video-section {
+        order: 1; /* جعل قسم الفيديو يظهر أولاً */
+    }
+
+    .video-list {
+        order: 2; /* جعل قائمة الفيديوهات تظهر بعد الفيديو */
+    }
+
+    .video-item {
+        flex-direction: column; /* تغيير اتجاه عناصر الفيديو إلى عمودي */
+        text-align: center;
+    }
+
+    .video-item img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .video-container{
+        width: 100%;
+        height: 1vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* انيميشن التلاشي */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* انيميشن الانزلاق من الجانب */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .container {
     width: 90%;
@@ -820,4 +1030,19 @@ body {
 .scroll-animation.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.container8 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+
+.back1:hover{
+    cursor: pointer;
 }

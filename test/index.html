@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Auto Scroll</title>
+    <style>
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="/png/icon.jpg" alt="صورة 1">
+        <img src="/png/icon.jpg" alt="صورة 2">
+        <img src="/png/icon.jpg" alt="صورة 3">
+        <img src="/png/icon.jpg" alt="صورة 3">
+        <img src="/png/icon.jpg" alt="صورة 3">
+        <img src="/png/icon.jpg" alt="صورة 3">
+        <img src="/png/icon.jpg" alt="صورة 3">
+        <img src="/png/icon.jpg" alt="صورة 3">
+        <img src="/png/icon.jpg" alt="صورة 3">
+        <img src="/png/icon.jpg" alt="صورة 3">
+        <img src="/png/icon.jpg" alt="صورة 3">
+        <img src="/png/icon.jpg" alt="صورة 3">
+    </div>
+
+    <script>
+        const gallery = document.querySelector('.gallery');
+        const scrollSpeed = 3000; // سرعة التمرير (3 ثواني)
+        let autoScrollInterval;
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                const scrollAmount = gallery.clientWidth; // احصل على عرض الـ gallery ديناميكيًا
+                gallery.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+
+                // التحقق من الوصول إلى النهاية مع هامش صغير
+                if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 10) {
+                    gallery.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }, scrollSpeed);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval); // إيقاف التمرير التلقائي
+        }
+
+        // إيقاف التمرير التلقائي عند التمرير يدويًا
+        gallery.addEventListener('scroll', () => {
+            stopAutoScroll();
+            setTimeout(startAutoScroll, scrollSpeed * 2); // إعادة التشغيل بعد فترة
+        });
+
+        // بدء التمرير التلقائي عند تحميل الصفحة
+        window.onload = startAutoScroll;
+    </script>
+</body>
+</html>

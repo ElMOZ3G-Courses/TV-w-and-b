@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مسلسلات رمضان 2024 - سيما أبيض وأسود</title>
     <link rel="stylesheet" href="code/styles.css"> <!-- رابط ملف CSS -->
+    <link rel="icon" href="png/icon.jpg">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="logo">
                 <h1>سيما أبيض وأسود</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="ssearch-input" placeholder="ابحث عن مسلسل">
+                <button onclick="search()">بحث</button>
             </div>
             <nav class="navbar">
                 <div class="hamburger" onclick="toggleMenu()">
@@ -19,21 +24,32 @@
                     <div class="line"></div>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="movies.html">الأفلام</a></li>
-                    <li><a href="series.html">المسلسلات</a></li>
-                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="/index.html" class="re" id="re">الرئيسية</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    
 
     <main>
+       
         <section class="hero">
-            <div class="container">
-                <h2>مسلسلات رمضان 2025</h2>
-                <p>استمتع بأحدث مسلسلات رمضان 2025 على سيما أبيض وأسود.</p>
+            <h2 class="r5">اشهر مسلسلات رمضان 2025</h2>
+            <div class="container4">
+                
+
+                <button class="scroll-btn left-btn" onclick="scrollGallery(-1)" style="margin-right: 30px;">&#10095;</button>
+                
+                
+                <div class="gallery" >
+                    <img src="png/3tawla.jpg" alt="صورة 1">
+                    <img src="png/mada77.jpeg" alt="صورة 2">
+                    <img src="png/ashash.jpg" alt="صورة 3">
+                    <img src="png/80bako.jpg" alt="صورة 4">
+                </div>
+
+                <button class="scroll-btn right-btn" onclick="scrollGallery(1)" style="margin-left: 30px;">&#10094;</button>
             </div>
         </section>
 
@@ -45,7 +61,7 @@
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdW5pbUoYazZJvXzCI7o-5-2uWbYMegWsrNg&s" alt="مسلسل 1">
                         <h3>المداح اسطورة العهد</h3>
                         <p>وصف قصير للمسلسل.</p>
-                        <button class="watch-btn">مشاهدة</button>
+                        <button class="watch-btn" id="mada7">مشاهدة</button>
                     </div>
                     <!-- مسلسل 2 -->
                     <div class="series-card scroll-animation">
@@ -107,13 +123,13 @@
                         <button class="watch-btn">مشاهدة</button>
                     </div>
                     <div class="series-card scroll-animation">
-                        <img src="png/godar.jpg" alt="مسلسل 11">
-                        <h3>جودر موسم 2</h3>
+                        <img src="png/80bako.jpg" alt="مسلسل 11">
+                        <h3>80 باكو</h3>
                         <p>وصف قصير للمسلسل.</p>
                         <button class="watch-btn">مشاهدة</button>
                     </div>
                     <div class="series-card scroll-animation">
-                        <img src="png/sharnka.webp" alt="مسلسل 6">
+                        <img src="png/sharnka.webp" alt="مسلسل 12">
                         <h3>الشرنقة</h3>
                         <p>وصف قصير للمسلسل.</p>
                         <button class="watch-btn">مشاهدة</button>
@@ -131,6 +147,13 @@
 
     <button id="back-to-top" title="ارجع إلى الأعلى">↑</button>
 
-    <script src="code/script.js"></script> <!-- رابط ملف JavaScript -->
+    <script src="code/script.js"></script> 
+    <script>
+        const mada7 = document.getElementById('mada7')
+        mada7.addEventListener("click",()=>{
+            window.location.href = "video/Mada7-fsF%5EwBNM1F%25BFdc%25n=1/video.html"
+        })
+    </script>
+
 </body>
 </html>

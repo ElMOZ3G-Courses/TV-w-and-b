@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المداح اسطورة العهد</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="png/icon.jpg">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>سيما أبيض وأسود</h1>
+            </div>
+            <nav class="navbar">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a class="re" id="re">الرئيسية</a></li>
+                    <li><a class="back1" id="back1">صفحة المسلسلات</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container8" style="margin-top: 110px;">
+            <!-- قسم عرض الفيديو -->
+            <section class="video-section fade-in" style="margin-right: 10px;">
+                <div class="video-container">
+                    <video poster="png/poster.jpg" controls id="main-video">
+                        <source src="https://firebasestorage.googleapis.com/v0/b/tv-mazbot.appspot.com/o/ramadan2025%2FElmadah-5%2FEl.Maddah.Ostouret.El.Ahd.S5.EP1.mkv?alt=media&token=eced3de2-17af-4d0c-8548-50622fc7cc83" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-details">
+                    <h2>المداح الحلقة 1</h2>
+                </div>
+            </section>
+            <aside class="video-list slide-in" style="margin-right: 40px;">
+                <h3>قائمة الفيديوهات</h3>
+                <ul>
+                    <li class="video-item" data-video-src="https://firebasestorage.googleapis.com/v0/b/tv-mazbot.appspot.com/o/ramadan2025%2FElmadah-5%2FEl.Maddah.Ostouret.El.Ahd.S5.EP1.mkv?alt=media&token=eced3de2-17af-4d0c-8548-50622fc7cc83">
+                        <img src="png/1.avif" alt="صورة الفيديو 1">
+                        <div class="video-info">
+                            <h4>الحلقة 1</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" id="h22" data-video-src="https://youtu.be/mHyA_Dju3Hs?si=EtTGLJvlhmIeibcO">
+                        <img src="png/2.avif" alt="صورة الفيديو 2">
+                        <div class="video-info">
+                            <h4>الحلقة 2</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://example.com/video3.mp4">
+                        <img src="png/3.avif" alt="صورة الفيديو 3">
+                        <div class="video-info">
+                            <h4>الحلقة 3</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://example.com/video3.mp4">
+                        <img src="png/4.avif" alt="صورة الفيديو 4">
+                        <div class="video-info">
+                            <h4>الحلقة 4</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://example.com/video3.mp4">
+                        <img src="png/5.avif" alt="صورة الفيديو 5">
+                        <div class="video-info">
+                            <h4>الحلقة 5</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://example.com/video3.mp4">
+                        <img src="png/5.avif" alt="صورة الفيديو 6">
+                        <div class="video-info">
+                            <h4>الحلقة 6</h4>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+    <script src="script.js"></script>
+
+    <script>
+        // تغيير الفيديو عند النقر على عنصر في القائمة
+        const videoItems = document.querySelectorAll('.video-item');
+        const mainVideo = document.getElementById('main-video');
+        const videoDetails = document.querySelector('.video-details h2');
+
+        // إضافة حدث النقر لعناصر الفيديو
+        videoItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const videoSrc = item.getAttribute('data-video-src');
+                const videoTitle = item.querySelector('.video-info h4').textContent;
+
+                // تغيير الفيديو
+                mainVideo.src = videoSrc;
+
+                // تحديث تفاصيل الفيديو
+                videoDetails.textContent = videoTitle;
+            });
+        });
+    </script>
+</body>
+</html>

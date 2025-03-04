@@ -55,3 +55,45 @@ backToTopButton.addEventListener("click", () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 });
+
+
+
+
+
+
+
+
+
+
+const gallery = document.querySelector('.gallery');
+
+        // وظيفة التمرير
+        function scrollGallery(direction) {
+            const scrollAmount = gallery.clientWidth; // احصل على عرض الـ gallery ديناميكيًا
+            gallery.scrollBy({
+                left: direction * scrollAmount, // اتجاه التمرير (1 لليمين، -1 لليسار)
+                behavior: 'smooth' // تمرير سلس
+            });
+        }
+
+        // بدء التمرير التلقائي (اختياري)
+        const scrollSpeed = 3000; // سرعة التمرير (3 ثواني)
+        let autoScrollInterval;
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                scrollGallery(1); // التمرير لليمين تلقائيًا
+            }, scrollSpeed);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        // بدء التمرير التلقائي عند تحميل الصفحة (اختياري)
+        window.onload = startAutoScroll;
+
+        // إيقاف التمرير التلقائي عند التمرير يدويًا (اختياري)
+        gallery.addEventListener('mouseenter', stopAutoScroll);
+        gallery.addEventListener('mouseleave', startAutoScroll);
+        gallery.addEventListener('mouseleave', startAutoScroll);
