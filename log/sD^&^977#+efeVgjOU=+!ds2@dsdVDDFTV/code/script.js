@@ -64,7 +64,6 @@ backToTopButton.addEventListener("click", () => {
 
 
 
-
 const gallery = document.querySelector('.gallery');
 
         // وظيفة التمرير
