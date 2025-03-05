@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فهد البطل</title>
+    <link rel="stylesheet" href="code/style.css">
+    <link rel="icon" href="png/fahd-1.webp">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>سيما أبيض وأسود</h1>
+            </div>
+            <nav class="navbar">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a class="re" id="re" href="/index.html">الرئيسية</a></li>
+                    <li><a class="back1" id="back1">صفحة المسلسلات</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container8" style="margin-top: 110px;">
+            <!-- قسم عرض الفيديو -->
+            <section class="video-section fade-in" style="margin-right: 10px;">
+                <div class="video-container">
+                    <IFRAME id="video5" SRC="" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=640 HEIGHT=360 allowfullscreen></IFRAME>
+                    <IFRAME id="video4" SRC="https://vudeo.ws/embed-2oumojbmzmuo.html" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=640 HEIGHT=360 allowfullscreen></IFRAME>
+                    <IFRAME id="video3" SRC="https://vudeo.ws/embed-dfh6qyf0qja2.html" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=640 HEIGHT=360 allowfullscreen></IFRAME>
+                    <IFRAME id="video2" SRC="https://vudeo.ws/embed-lrlwgdzbw3gs.html" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=640 HEIGHT=360 allowfullscreen></IFRAME>
+                    <IFRAME id="main-video" SRC="https://vudeo.ws/embed-jvip0euysg0u.html" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=640 HEIGHT=360 allowfullscreen></IFRAME>
+                    
+                </div>
+                <div class="video-details">
+                    <h4 id="hh">فهد البطل الحلقة 1</h4>
+                </div>
+            </section>
+            <aside class="video-list slide-in" style="margin-right: 40px;">
+                <h3>قائمة الفيديوهات</h3>
+                <ul>
+                    <li class="video-item" id="h11" data-video-src="https://vudeo.ws/embed-jvip0euysg0u.html">
+                        <img src="png/fahd-1.webp" alt="صورة الفيديو 1">
+                        <div class="video-info">
+                            <h4>فهد البطل الحلقة 1</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" id="h22" data-video-src="https://vudeo.ws/embed-lrlwgdzbw3gs.html">
+                        <img src="png/fahd-1.webp" alt="صورة الفيديو 2">
+                        <div class="video-info">
+                            <h4>فهد البطل الحلقة 2</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="" id="h33">
+                        <img src="png/fahd-1.webp" alt="صورة الفيديو 3">
+                        <div class="video-info">
+                            <h4>فهد البطل الحلقة 3</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://example.com/video3.mp4" id="h44">
+                        <img src="png/fahd-1.webp" alt="صورة الفيديو 4">
+                        <div class="video-info">
+                            <h4>فهد البطل الحلقة 4</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://example.com/video3.mp4" id="h55" style="cursor: no-drop;">
+                        <img src="png/fahd-1.webp" alt="صورة الفيديو 5">
+                        <div class="video-info">
+                            <h4 style="color: rgb(185, 184, 184);">فهد البطل الحلقة 5</h4>
+                            <p style="color: rgb(185, 184, 184);">قريبا</p>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+    <script src="code/script.js"></script>
+
+    <script>
+        // تغيير الفيديو عند النقر على عنصر في القائمة
+        const videoItems = document.querySelectorAll('.video-item');
+        const mainVideo = document.getElementById('main-video');
+        const videoDetails = document.querySelector('.video-details h4');
+
+        // إضافة حدث النقر لعناصر الفيديو
+        videoItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const videoSrc = item.getAttribute('data-video-src');
+                const videoTitle = item.querySelector('.video-info h4').textContent;
+
+                // تغيير الفيديو
+                mainVideo.src = videoSrc;
+
+                // تحديث تفاصيل الفيديو
+                videoDetails.textContent = videoTitle;
+            });
+        });
+    </script>
+</body>
+</html>

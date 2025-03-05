@@ -93,3 +93,7 @@ const kamelbtn = document.getElementById('kamel-btn')
 kamelbtn.addEventListener('click', () => {
     window.location.href = 'video-kamel-el-add3/=2/video.html'
 })
+const fahdbtn = document.getElementById('fahd-btn')
+fahdbtn.addEventListener('click',()=>{
+    window.location.href = 'video-fahd-el-batal/=3/video.html'
+})
