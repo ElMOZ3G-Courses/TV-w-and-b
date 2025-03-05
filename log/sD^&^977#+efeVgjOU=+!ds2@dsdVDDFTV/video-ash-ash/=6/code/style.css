@@ -1,0 +1,1051 @@
+/* تنسيقات عامة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* تنسيقات الهيدر */
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* تنسيقات القسم الرئيسي */
+.main {
+    display: flex;
+    flex-direction: column; /* تغيير الاتجاه إلى عمودي على الشاشات الصغيرة */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.video-section {
+    flex: 3;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* نسبة 16:9 للفيديو */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 5vh;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-details {
+    margin-top: 20px;
+}
+
+.video-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.video-details p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* تنسيقات قائمة الفيديوهات */
+.video-list {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-list h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.video-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-item:hover {
+    background-color: #f1f1f1;
+}
+
+.video-item img {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.video-info h4 {
+    font-size: 16px;
+    margin: 0;
+    margin-right: 40px;
+}
+
+.video-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0 0;
+    margin-right: 40px;
+}
+video{
+    width: 100%;
+}
+
+/* تنسيقات الفوتر */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Media Queries للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column; /* تغيير الاتجاه إلى عمودي */
+    }
+
+    .video-section {
+        order: 1; /* جعل قسم الفيديو يظهر أولاً */
+    }
+
+    .video-list {
+        order: 2; /* جعل قائمة الفيديوهات تظهر بعد الفيديو */
+    }
+
+    .video-item {
+        flex-direction: column; /* تغيير اتجاه عناصر الفيديو إلى عمودي */
+        text-align: center;
+    }
+
+    .video-item img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .video-container{
+        width: 100%;
+        height: 1vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* انيميشن التلاشي */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* انيميشن الانزلاق من الجانب */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* أنماط الهيدر */
+.header {
+    width: 100%;
+    background-color: #000000b6;
+    color: #ffffff;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0px 0px 10px 10px;
+    justify-content: space-around;
+    height: 170px;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #cccccc;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+/* أنماط القسم الرئيسي */
+.hero {
+    background-color: #f1f1f1;
+    padding: 100px 0;
+    text-align: center;
+    margin-top: 120px;
+
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555555;
+}
+
+/* أنماط الأفلام والمسلسلات */
+.movies, .series {
+    padding: 50px 0;
+}
+
+.movies h2, .series h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-grid, .series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card, .series-card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+.series-card:hover{
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.05);
+}
+
+.movie-card img, .series-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.movie-card:hover{
+    cursor: pointer;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    transform: scale(1.05);
+}
+
+.movie-card h3, .series-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card p, .series-card p {
+    font-size: 16px;
+    color: #555555;
+}
+
+/* أنماط الفوتر */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    height: 180px;
+}
+
+.footer p {
+    font-size: 16px;
+}
+.name-top{
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+
+.rating {
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star.active {
+    color: #ffcc00;
+}
+
+
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.categories{
+    margin-top: 40px;
+}
+.categories ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.categories a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.ul-t{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    transform: scale(0.97);
+}
+.mz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.but{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.social-share a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 30px;
+}
+
+.facebook {
+    background-color: #1877f2;
+    color: #fff;
+}
+
+.twitter {
+    background-color: #1da1f2;
+    color: #fff;
+}
+
+.whatsapp {
+    background-color: #25d366;
+    color: #fff;
+}
+
+#back-to-top {
+    display: none; /* مخفي بشكل افتراضي */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0; /* مخفي في البداية */
+    transform: translateY(100px); /* يبدأ من أسفل */
+}
+
+#back-to-top.show {
+    opacity: 1; /* يظهر */
+    transform: translateY(0); /* يعود إلى مكانه */
+}
+
+#back-to-top:hover {
+    background-color: #333;
+    animation: bounce 0.5s ease; /* اهتزاز عند التمرير فوقه */
+}
+
+/* انيميشن الاهتزاز */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.aff:hover{
+    cursor: pointer;
+}
+
+
+
+/* أنماط للشاشات الصغيرة */
+@media (max-width: 800px) {
+    .hamburger {
+        display: flex;
+        margin-top: 0;
+    }
+    .nav-links {
+        position: absolute;
+        top: 110px;
+        right: 0;
+        background-color: #000000;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .name-top{
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .nav-links{
+        margin-top: 45px;
+        border-radius: 0px 0px 10px 10px;
+    }
+}
+
+
+
+@media (max-width: 800px) {
+    .container {
+        flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد */
+    }
+
+    .search-bar {
+        display: none; /* إخفاء شريط البحث على الشاشات الصغيرة */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px; /* تحت الهيدر */
+        right: 0;
+        background-color: #000000;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 10px 0;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; /* إظهار زر البرجر على الشاشات الصغيرة */
+    }
+
+    .logo h1 {
+        font-size: 20px; /* تصغير حجم الشعار على الشاشات الصغيرة */
+    }
+}
+
+
+
+
+
+
+/* انيميشن الظهور التدريجي */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* انيميشن الاهتزاز */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* انيميشن النبض */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* انيميشن الانزلاق */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* تطبيق الانيميشن على العناصر */
+.header {
+    animation: fadeIn 1s ease-out;
+}
+
+.hero {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.movies {
+    animation: fadeIn 2s ease-out;
+}
+
+.series {
+    animation: fadeIn 2.5s ease-out;
+}
+
+.footer {
+    animation: fadeIn 3s ease-out;
+}
+
+#back-to-top {
+    animation: bounce 2s infinite;
+}
+
+button {
+    animation: pulse 1.5s infinite;
+}
+
+.movie-card, .series-card {
+    animation: slideIn 1s ease-out;
+}
+
+.categories ul li {
+    animation: fadeIn 1s ease-out;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+
+
+
+
+/* انيميشن الظهور التدريجي */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* إخفاء العناصر بشكل افتراضي */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* إظهار العناصر عند التمرير */
+.scroll-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scroll-animation-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animation-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.nav-links {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+/* انيميشن الظهور التدريجي من الأسفل */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* إخفاء العناصر بشكل افتراضي */
+.scroll-up-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* إظهار العناصر عند التمرير لأعلى */
+.scroll-up-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* انيميشن التكبير */
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scroll-up-animation-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-up-animation-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+.mss{
+    cursor: pointer;
+}
+.re{
+    cursor: pointer;
+}
+.container1 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.container1 p{
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* إعادة تعيين الأنماط الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    direction: rtl; /* النص من اليمين لليسار */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* لجعل العناصر داخل الهيدر متساوية في الارتفاع */
+}
+
+/* أنماط الهيدر */
+.header {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 80px; /* ارتفاع ثابت للهيدر */
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0; /* إزالة الهوامش الافتراضية */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* تباعد بين حقل البحث والزر */
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #333;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0; /* إزالة الهوامش الافتراضية */
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #cccccc;
+}
+
+.hamburger {
+    display: none; /* مخفي على الشاشات الكبيرة */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+
+@media (max-width: 800px) {
+    .nav-links {
+        position: absolute;
+        top: 80px; /* تحت الهيدر */
+        right: 0;
+        background-color: #000000;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none; /* مخفي بشكل افتراضي */
+        padding: 10px 0;
+        border-radius: 0px 0px 10px 10px;
+        margin-top: 110px;
+    }
+
+    .nav-links.active {
+        display: flex; /* إظهار القائمة عند النقر */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: none; /* إظهار زر Hamburger على الشاشات الصغيرة */
+    }
+    *{
+        font-size: 10px;
+    }
+    .header {
+        height: 120px;
+        font-size: 10px;
+    }
+    
+}
+
+/* أنميشن الظهور عند التمرير */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.container8 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+
+.back1:hover{
+    cursor: pointer;
+}

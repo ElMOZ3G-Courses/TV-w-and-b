@@ -97,3 +97,15 @@ const fahdbtn = document.getElementById('fahd-btn')
 fahdbtn.addEventListener('click',()=>{
     window.location.href = 'video-fahd-el-batal/=3/video.html'
 })
+const backo = document.getElementById('backo-btn')
+backo.addEventListener('click', () => {
+    window.location.href = 'video-80backo/=5/video.html'
+})
+const ashash = document.getElementById('ash')
+ashash.addEventListener('click', () => {
+    window.location.href = 'video-ash-ash/=6/video.html'
+})
+const atawla = document.getElementById('atawla-btn')
+atawla.addEventListener('click', () => {
+    window.location.href = 'video-al-atawla/=7/video.html'
+})
