@@ -3,75 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Auto Scroll</title>
-    <style>
-        .gallery {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            gap: 10px;
-        }
-        .gallery img {
-            width: 200px;
-            height: 300px;
-            object-fit: cover;
-        }
-    </style>
+    <title>المداح اسطورة العهد</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="png/icon.jpg">
 </head>
 <body>
-    <div class="gallery">
-        <img src="/png/icon.jpg" alt="صورة 1">
-        <img src="/png/icon.jpg" alt="صورة 2">
-        <img src="/png/icon.jpg" alt="صورة 3">
-        <img src="/png/icon.jpg" alt="صورة 3">
-        <img src="/png/icon.jpg" alt="صورة 3">
-        <img src="/png/icon.jpg" alt="صورة 3">
-        <img src="/png/icon.jpg" alt="صورة 3">
-        <img src="/png/icon.jpg" alt="صورة 3">
-        <img src="/png/icon.jpg" alt="صورة 3">
-        <img src="/png/icon.jpg" alt="صورة 3">
-        <img src="/png/icon.jpg" alt="صورة 3">
-        <img src="/png/icon.jpg" alt="صورة 3">
-    </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>سيما أبيض وأسود</h1>
+            </div>
+            <nav class="navbar">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a class="re" id="re" href="/index.html">الرئيسية</a></li>
+                    <li><a class="back1" id="back1">صفحة المسلسلات</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container8" style="margin-top: 110px;">
+            <!-- قسم عرض الفيديو -->
+            <section class="video-section fade-in" style="margin-right: 10px;">
+                <div class="video-container">
+                    <IFRAME SRC="https://vudeo.ws/embed-yaa6i713xdy7.html" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=640 HEIGHT=360 allowfullscreen></IFRAME>
+                </div>
+                <div class="video-details">
+                    <h2>المداح الحلقة 1</h2>
+                </div>
+            </section>
+            <aside class="video-list slide-in" style="margin-right: 40px;">
+                <h3>قائمة الفيديوهات</h3>
+                <ul>
+                    <li class="video-item" data-video-src="https://vudeo.ws/embed-yaa6i713xdy7.html">
+                        <img src="png/kamel2" alt="صورة الفيديو 1">
+                        <div class="video-info">
+                            <h4>الحلقة 1</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" id="h22" data-video-src="https://firebasestorage.googleapis.com/v0/b/tv-mazbot.appspot.com/o/ramadan2025%2FElmadah-5%2FEl.Maddah.Ostouret.El.Ahd.S5.EP2.mkv?alt=media&token=c9ecb481-4960-4538-83e8-7eaf5cf280b9">
+                        <img src="png/kamel2" alt="صورة الفيديو 2">
+                        <div class="video-info">
+                            <h4>الحلقة 2</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://qvid.cc/albaplayer/kamel-el-addad-s02e01/?serv=4">
+                        <img src="png/3.avif" alt="صورة الفيديو 3">
+                        <div class="video-info">
+                            <h4>الحلقة 3</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://example.com/video3.mp4">
+                        <img src="png/4.avif" alt="صورة الفيديو 4">
+                        <div class="video-info">
+                            <h4>الحلقة 4</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://example.com/video3.mp4">
+                        <img src="png/5.avif" alt="صورة الفيديو 5">
+                        <div class="video-info">
+                            <h4>الحلقة 5</h4>
+                        </div>
+                    </li>
+                    <li class="video-item" data-video-src="https://example.com/video3.mp4">
+                        <img src="png/5.avif" alt="صورة الفيديو 6">
+                        <div class="video-info">
+                            <h4>الحلقة 6</h4>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+    <script src="script.js"></script>
 
     <script>
-        const gallery = document.querySelector('.gallery');
-        const scrollSpeed = 3000; // سرعة التمرير (3 ثواني)
-        let autoScrollInterval;
+        // تغيير الفيديو عند النقر على عنصر في القائمة
+        const videoItems = document.querySelectorAll('.video-item');
+        const mainVideo = document.getElementById('main-video');
+        const videoDetails = document.querySelector('.video-details h2');
 
-        function startAutoScroll() {
-            autoScrollInterval = setInterval(() => {
-                const scrollAmount = gallery.clientWidth; // احصل على عرض الـ gallery ديناميكيًا
-                gallery.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
+        // إضافة حدث النقر لعناصر الفيديو
+        videoItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const videoSrc = item.getAttribute('data-video-src');
+                const videoTitle = item.querySelector('.video-info h4').textContent;
 
-                // التحقق من الوصول إلى النهاية مع هامش صغير
-                if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 10) {
-                    gallery.scrollTo({
-                        left: 0,
-                        behavior: 'smooth'
-                    });
-                }
-            }, scrollSpeed);
-        }
+                // تغيير الفيديو
+                mainVideo.src = videoSrc;
 
-        function stopAutoScroll() {
-            clearInterval(autoScrollInterval); // إيقاف التمرير التلقائي
-        }
-
-        // إيقاف التمرير التلقائي عند التمرير يدويًا
-        gallery.addEventListener('scroll', () => {
-            stopAutoScroll();
-            setTimeout(startAutoScroll, scrollSpeed * 2); // إعادة التشغيل بعد فترة
+                // تحديث تفاصيل الفيديو
+                videoDetails.textContent = videoTitle;
+            });
         });
-
-        // بدء التمرير التلقائي عند تحميل الصفحة
-        window.onload = startAutoScroll;
     </script>
 </body>
 </html>

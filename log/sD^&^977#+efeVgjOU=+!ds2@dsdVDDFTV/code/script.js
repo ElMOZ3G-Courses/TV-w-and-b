@@ -56,14 +56,6 @@ backToTopButton.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
 });
 
-
-
-
-
-
-
-
-
 const gallery = document.querySelector('.gallery');
 
         // وظيفة التمرير
@@ -76,7 +68,7 @@ const gallery = document.querySelector('.gallery');
         }
 
         // بدء التمرير التلقائي (اختياري)
-        const scrollSpeed = 3000; // سرعة التمرير (3 ثواني)
+        const scrollSpeed = 4000; // سرعة التمرير (3 ثواني)
         let autoScrollInterval;
 
         function startAutoScroll() {
@@ -91,8 +83,13 @@ const gallery = document.querySelector('.gallery');
 
         // بدء التمرير التلقائي عند تحميل الصفحة (اختياري)
         window.onload = startAutoScroll;
+        scrollGallery.onload;
 
         // إيقاف التمرير التلقائي عند التمرير يدويًا (اختياري)
         gallery.addEventListener('mouseenter', stopAutoScroll);
         gallery.addEventListener('mouseleave', startAutoScroll);
         gallery.addEventListener('mouseleave', startAutoScroll);
+const kamelbtn = document.getElementById('kamel-btn')
+kamelbtn.addEventListener('click', () => {
+    window.location.href = 'video-kamel-el-add3/=2/video.html'
+})
