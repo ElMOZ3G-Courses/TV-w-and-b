@@ -113,3 +113,7 @@ const ashgal = document.getElementById('ashgal-btn')
 ashgal.addEventListener('click', () => {
     window.location.href = 'video-ashgal-shaka/=8/video.html'
 })
+const sedbtn = document.getElementById('sed-btn')
+sedbtn.addEventListener('click', () => {
+    window.location.href = 'video-sed-alnas/=9/video.html'
+})
