@@ -109,3 +109,7 @@ const atawla = document.getElementById('atawla-btn')
 atawla.addEventListener('click', () => {
     window.location.href = 'video-al-atawla/=7/video.html'
 })
+const ashgal = document.getElementById('ashgal-btn')
+ashgal.addEventListener('click', () => {
+    window.location.href = 'video-ashgal-shaka/=8/video.html'
+})

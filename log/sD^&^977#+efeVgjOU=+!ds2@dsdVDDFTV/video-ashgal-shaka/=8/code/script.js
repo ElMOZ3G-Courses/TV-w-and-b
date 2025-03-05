@@ -24,13 +24,16 @@ const h33 = document.getElementById('h33')
 const h44 = document.getElementById('h44')
 const h55 = document.getElementById('h55')
 const h66 = document.getElementById('h66')
+const h77 = document.getElementById('h77')
+const video6 = document.getElementById('video6')
 h22.addEventListener('click', () => {
     mainVideo.style.display = 'none'
     video2.style.display = 'block'
     video3.style.display = 'none'
     video4.style.display = 'none'
     video5.style.display = 'none'
-    htext.innerHTML = 'كامل العدد 3 الحلقة 2'
+    video6.style.display = 'none'
+    htext.innerHTML = '80 باكو الحلقة 2'
     // الحصول على العنصر iframe
     const iframe = document.getElementById('main-video');
 
@@ -52,7 +55,8 @@ h11.addEventListener('click', () => {
     video3.style.display = 'none'
     video4.style.display = 'none'
     video5.style.display = 'none'
-    htext.innerHTML = 'كامل العدد 3 الحلقة 1'
+    video6.style.display = 'none'
+    htext.innerHTML = '80 باكو الحلقة 1'
     // الحصول على العنصر iframe
     const iframe = document.getElementById('main-video');
 
@@ -74,7 +78,8 @@ h33.addEventListener('click',()=>{
     video3.style.display = 'block'
     video4.style.display = 'none'
     video5.style.display = 'none'
-    htext.innerHTML = 'كامل العدد 3 الحلقة 3'
+    video6.style.display = 'none'
+    htext.innerHTML = '80 باكو الحلقة 3'
     // الحصول على العنصر iframe
     const iframe = document.getElementById('main-video');
 
@@ -95,7 +100,8 @@ h44.addEventListener('click', ()=>{
     video3.style.display = 'none'
     video4.style.display = 'block'
     video5.style.display = 'none'
-    htext.innerHTML = 'كامل العدد 3 الحلقة 4'
+    video6.style.display = 'none'
+    htext.innerHTML = '80 باكو الحلقة 4'
     // الحصول على العنصر iframe
     const iframe = document.getElementById('main-video');
 
@@ -116,7 +122,8 @@ h55.addEventListener('click', ()=>{
     video3.style.display = 'none'
     video4.style.display = 'none'
     video5.style.display = 'block'
-    htext.innerHTML = 'كامل العدد 3 الحلقة 5'
+    video6.style.display = 'none'
+    htext.innerHTML = '80 باكو الحلقة 5'
     // الحصول على العنصر iframe
     const iframe = document.getElementById('main-video');
 
@@ -142,7 +149,7 @@ h66.addEventListener('click', ()=>{
     video4.style.display = 'none'
     video5.style.display = 'none'
     video6.style.display = 'block'
-    htext.innerHTML = 'كامل العدد 3 الحلقة 6'
+    htext.innerHTML = '80 باكو الحلقة 6'
     // الحصول على العنصر iframe
     const iframe = document.getElementById('main-video');
 
