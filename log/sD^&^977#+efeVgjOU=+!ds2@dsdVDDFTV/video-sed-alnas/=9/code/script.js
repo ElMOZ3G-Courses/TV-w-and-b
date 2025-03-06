@@ -136,3 +136,24 @@ h55.addEventListener('click', ()=>{
     // استدعاء الدالة لإيقاف الفيديو
     stopVideo();
 })
+h66.addEventListener('click', ()=>{
+    mainVideo.style.display = 'none'
+    video2.style.display = 'none'
+    video3.style.display = 'none'
+    video4.style.display = 'none'
+    video5.style.display = 'none'
+    htext.innerHTML = 'سيد الناس الحلقة 6'
+    // الحصول على العنصر iframe
+    const iframe = document.getElementById('main-video');
+
+    // إيقاف الفيديو (يعتمد على دعم الموقع)
+    function stopVideo() {
+        if (iframe) {
+            // إرسال أمر إيقاف التشغيل إلى iframe
+            iframe.src = iframe.src; // إعادة تحميل iframe لإيقاف الفيديو
+        }
+    }
+
+    // استدعاء الدالة لإيقاف الفيديو
+    stopVideo();
+})

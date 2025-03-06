@@ -26,6 +26,7 @@ const h55 = document.getElementById('h55')
 const h66 = document.getElementById('h66')
 const h77 = document.getElementById('h77')
 const video6 = document.getElementById('video6')
+const video7 = document.getElementById('video7')
 h22.addEventListener('click', () => {
     mainVideo.style.display = 'none'
     video2.style.display = 'block'
@@ -150,6 +151,29 @@ h66.addEventListener('click', ()=>{
     video5.style.display = 'none'
     video6.style.display = 'block'
     htext.innerHTML = 'اشغال شقة جدا الحلقة 6'
+    // الحصول على العنصر iframe
+    const iframe = document.getElementById('main-video');
+
+    // إيقاف الفيديو (يعتمد على دعم الموقع)
+    function stopVideo() {
+        if (iframe) {
+            // إرسال أمر إيقاف التشغيل إلى iframe
+            iframe.src = iframe.src; // إعادة تحميل iframe لإيقاف الفيديو
+        }
+    }
+
+    // استدعاء الدالة لإيقاف الفيديو
+    stopVideo();
+})
+h77.addEventListener('click', ()=>{
+    mainVideo.style.display = 'none'
+    video2.style.display = 'none'
+    video3.style.display = 'none'
+    video4.style.display = 'none'
+    video5.style.display = 'none'
+    video6.style.display = 'none'
+    video7.style.display = 'block'
+    htext.innerHTML = 'اشغال شقة جدا الحلقة 7'
     // الحصول على العنصر iframe
     const iframe = document.getElementById('main-video');
 
