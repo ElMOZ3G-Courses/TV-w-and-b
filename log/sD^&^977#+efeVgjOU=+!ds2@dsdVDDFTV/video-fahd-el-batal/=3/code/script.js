@@ -24,6 +24,7 @@ const h33 = document.getElementById('h33')
 const h44 = document.getElementById('h44')
 const h55 = document.getElementById('h55')
 const h66 = document.getElementById('h66')
+const video6 = document.getElementById('video6')
 h22.addEventListener('click', () => {
     mainVideo.style.display = 'none'
     video2.style.display = 'block'
@@ -122,6 +123,27 @@ h55.addEventListener('click', ()=>{
     video4.style.display = 'none'
     video5.style.display = 'block'
     htext.innerHTML = 'فهد البطل الحلقة 5'
+    // الحصول على العنصر iframe
+    const iframe = document.getElementById('main-video');
+
+    // إيقاف الفيديو (يعتمد على دعم الموقع)
+    function stopVideo() {
+        if (iframe) {
+            // إرسال أمر إيقاف التشغيل إلى iframe
+            iframe.src = iframe.src; // إعادة تحميل iframe لإيقاف الفيديو
+        }
+    }
+
+    // استدعاء الدالة لإيقاف الفيديو
+    stopVideo();
+})
+h66.addEventListener('click', ()=>{
+    mainVideo.style.display = 'none'
+    video2.style.display = 'none'
+    video3.style.display = 'none'
+    video4.style.display = 'none'
+    video5.style.display = 'none'
+    htext.innerHTML = 'فهد البطل الحلقة 6'
     // الحصول على العنصر iframe
     const iframe = document.getElementById('main-video');
 
